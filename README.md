@@ -8,7 +8,7 @@
   <li>Script feito inicialmente para DayTrade.
   <li>Use por sua conta e risco. Não me responsabilizo por possíveis perdas financeiras.
     
-  <h2>Como Usar 🕑</h2>
+  <h2>Como Usar▶️</h2>
 <pre><code>iniciar = FiboPoint(ativo='CÓDIGO DA AÇÃO QUE DESEJA CALCULAR')
 print(iniciar.calculo())</code></pre>
 
