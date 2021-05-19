@@ -12,4 +12,10 @@
 <pre><code>iniciar = FiboPoint(ativo='CÓDIGO DA AÇÃO QUE DESEJA CALCULAR')
 print(iniciar.calculo())</code></pre>
 
+<p>Ou...</p>
+<pre><code>from fibopointpy import FiboPoint
+
+iniciar = FiboPoint('BBAS3')
+print(iniciar.calculo())</code></pre>
+
 <P>Será retornado um dicionário com os preços de suporte 1, 2 e 3. Resistência 1, 2 e 3 e Ponto de Pivot</P>
