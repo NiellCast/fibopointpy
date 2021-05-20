@@ -9,6 +9,7 @@
   <li>Use por sua conta e risco. Não me responsabilizo por possíveis perdas financeiras.
   <li>Este script não funciona para o mercado fracionário.
   <li>Necessário ter a linguagem Python instalada no dispositivo.
+  <li>Necessário ter o pacote "Investpy" instalado.
     
   <h2>Como Usar ▶️</h2>
 <pre><code>pip install -r requirements.txt
