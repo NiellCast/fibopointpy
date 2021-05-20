@@ -1,4 +1,4 @@
-<h1>Script feito em PYTHON para calcular o indicador "Ponto de Pivot" utilizando Fibonacci no mercado de ações brasileiro</h1>
+<h1>Script feito em PYTHON para calcular o indicador "Ponto de Pivot" utilizando Fibonacci no mercado de ações brasileiro.</h1>
 
 <li>Estado atual - Em desenvolvimento. 📄
   
