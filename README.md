@@ -8,6 +8,7 @@
   <li>Script feito inicialmente para DayTrade.
   <li>Use por sua conta e risco. Não me responsabilizo por possíveis perdas financeiras.
   <li>Este script não funciona para o mercado fracionário.
+  <li>Necessário ter a linguagem Python instalada no dispositivo.
     
   <h2>Como Usar ▶️</h2>
 <pre><code>Basta fazer o download e rodar o script pelo terminal.</code></pre>
