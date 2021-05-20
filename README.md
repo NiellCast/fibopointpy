@@ -10,6 +10,7 @@
   <li>Este script não funciona para o mercado fracionário.
   <li>Necessário ter a linguagem Python instalada no dispositivo.
   <li>Necessário ter o pacote "Investpy" instalado.
+  <li>Script inspirado no método "LeandroStormer" para o indicador Pivot Point.
     
   <h2>Como Usar ▶️</h2>
 <pre><code>pip install -r requirements.txt
