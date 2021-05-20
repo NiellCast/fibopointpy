@@ -11,7 +11,7 @@
   <li>Necessário ter a linguagem Python instalada no dispositivo.
     
   <h2>Como Usar ▶️</h2>
-<pre><code>Basta fazer o download e rodar o script pelo terminal.</code></pre>
+<pre><code>Basta fazer o download e rodar o script pelo terminal com: python fibopoint.py</code></pre>
 
 <p>Ou...</p>
 <pre><code>from fibopointpy import FiboPoint
