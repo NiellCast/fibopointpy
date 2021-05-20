@@ -25,7 +25,7 @@ class FiboPoint:
 		try:
 			grafico = investpy.get_stock_historical_data(stock=self.ativo,
 			                                             country='brazil',
-			                                             from_date=f'01/06/{self.data()[2] - 1}',
+			                                             from_date=f'01/12/{self.data()[2] - 1}',
 			                                             to_date=f'{self.data()[0]}/{self.data()[1]}/{self.data()[2]}',
 			                                             interval='Daily')
 			
@@ -63,6 +63,15 @@ class FiboPoint:
 
 
 if __name__ == '__main__':
-	iniciar = FiboPoint(ativo='MGLU3')
-	print(iniciar.calculo())
-
+	while True:
+		atv = str(input('Digite o código da ação que você quer calcular (ex: "MGLU3"): '))
+		print()
+		iniciar = FiboPoint(ativo=atv)
+		for item, dado in iniciar.calculo().items():
+			print(f'{item.capitalize()}: {dado}')
+		print()
+		
+		continuar = str(input('Continuar calculando? [S/N]: ')).strip().upper()
+		print()
+		if continuar == 'N':
+			break
