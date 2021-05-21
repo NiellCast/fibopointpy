@@ -58,7 +58,7 @@ if __name__ == '__main__':
 		print()
 		iniciar = FiboPoint(ativo=atv)
 		for item, dado in iniciar.calculo().items():
-			print(f'{item.capitalize()}: {dado}')
+			print(f'{item.capitalize()}: {dado:.2f}')
 		print()
 		
 		continuar = str(input('Continuar calculando? [S/N]: ')).strip().upper()
