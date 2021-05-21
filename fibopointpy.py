@@ -1,5 +1,5 @@
 import investpy
-from datetime import date
+from data import Data
 
 
 class FiboPoint:
@@ -7,26 +7,16 @@ class FiboPoint:
 		"""
 		:param ativo: Digitar o código da ação que deseja calcular
 		"""
-		self.hoje = date.today()
 		self.ativo = ativo.strip().upper()
 		self.acoes = list(investpy.get_stocks('brazil')['symbol'])
 	
-	def data(self):
-		hoje = self.hoje
-		
-		# Caso dia ou mês for menor que 10, retorna o dia com um 0 (zero) na frente.
-		dia = f'0{hoje.day}' if hoje.day < 10 else hoje.day
-		mes = f'0{hoje.month}' if hoje.month < 10 else hoje.month
-		ano = hoje.year
-		
-		return [dia, mes, ano]
-	
 	def dados(self):
+		calendar = Data()
 		try:
 			grafico = investpy.get_stock_historical_data(stock=self.ativo,
 			                                             country='brazil',
-			                                             from_date=f'01/12/{self.data()[2] - 1}',
-			                                             to_date=f'{self.data()[0]}/{self.data()[1]}/{self.data()[2]}',
+			                                             from_date=f'01/12/{calendar.ano() - 1}',
+			                                             to_date=f'{calendar.dia()}/{calendar.mes()}/{calendar.ano()}',
 			                                             interval='Daily')
 			
 			# Insere o nome das colunas e limpa o desnecessário.
