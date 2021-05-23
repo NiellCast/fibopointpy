@@ -1,4 +1,4 @@
-import investpy
+from investpy import get_stocks, get_stock_historical_data
 from data import Data
 
 
@@ -8,23 +8,23 @@ class FiboPoint:
 		:param ativo: Digitar o código da ação que deseja calcular
 		"""
 		self.ativo = ativo.strip().upper()
-		self.acoes = list(investpy.get_stocks('brazil')['symbol'])
+		self.acoes = list(get_stocks('brazil')['symbol'])
 	
 	def dados(self):
 		calendar = Data()
 		try:
-			grafico = investpy.get_stock_historical_data(stock=self.ativo,
-			                                             country='brazil',
-			                                             from_date=f'01/12/{calendar.ano() - 1}',
-			                                             to_date=f'{calendar.dia()}/{calendar.mes()}/{calendar.ano()}',
-			                                             interval='Daily')
+			grafico = get_stock_historical_data(stock=self.ativo,
+			                                    country='brazil',
+			                                    from_date=f'01/12/{calendar.ano() - 1}',
+			                                    to_date=f'{calendar.dia()}/{calendar.mes()}/{calendar.ano()}',
+			                                    interval='Daily')
 			
 			# Insere o nome das colunas e limpa o desnecessário.
 			grafico.columns = ['Abertura', 'Maxima', 'Minima', 'Fechamento', 'Volume', 'Moeda']
 			grafico.drop(['Abertura', 'Fechamento', 'Moeda', 'Volume'], axis=1, inplace=True)
 			
 			return [grafico['Maxima'][-1], grafico['Minima'][-1]]
-			
+		
 		except Exception:
 			print('Não foi possível buscar os dados.')
 	
@@ -54,6 +54,7 @@ class FiboPoint:
 
 if __name__ == '__main__':
 	while True:
+		print()
 		atv = str(input('Digite o código da ação que você quer calcular (ex: "MGLU3"): '))
 		print()
 		iniciar = FiboPoint(ativo=atv)
