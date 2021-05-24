@@ -15,7 +15,7 @@
     
   <h2>Como Usar ▶️</h2>
 <pre><code>pip install -r requirements.txt
-python fibopointpy.py</code></pre>
+python fibopointpy.py (Ou: py fibopoint.py)</code></pre>
 
 <p>Ou...</p>
 <pre><code>pip install -r requirements.txt
