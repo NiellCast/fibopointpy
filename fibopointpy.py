@@ -3,7 +3,7 @@ from data import Data
 
 
 class FiboPoint:
-	def __init__(self, ativo):
+	def __init__(self, ativo: str):
 		"""
 		:param ativo: Digitar o código da ação que deseja calcular
 		"""
