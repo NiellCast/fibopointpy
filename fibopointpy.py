@@ -3,10 +3,16 @@ from data import Data
 
 
 class FiboPoint:
-	def __init__(self, ativo: str) -> None:
+	def __init__(self, ativo: str, timeframe: str) -> None:
 		"""
-		:param ativo: Digitar o código da ação que deseja calcular
+		:param ativo: Digitar o código da ação que deseja calcular.
+		:param timeframe: Digitar qual timeframe (D - Diário, S - Semanal) quer calcular.
 		"""
+		if timeframe.strip().upper() == 'S':
+			self.timeframe = 'Weekly'
+		elif timeframe.strip().upper() == 'D':
+			self.timeframe = 'Daily'
+			
 		self.ativo = ativo.strip().upper()
 		self.__acoes = list(get_stocks('brazil')['symbol'])
 	
@@ -20,7 +26,7 @@ class FiboPoint:
 			                                    country='brazil',
 			                                    from_date=f'01/12/{calendar.ano() - 1}',
 			                                    to_date=f'{calendar.dia()}/{calendar.mes()}/{calendar.ano()}',
-			                                    interval='Daily')
+			                                    interval=self.timeframe)
 			
 			# Insere o nome das colunas e limpa o desnecessário.
 			grafico.columns = ['Abertura', 'Maxima', 'Minima', 'Fechamento', 'Volume', 'Moeda']
@@ -59,8 +65,9 @@ if __name__ == '__main__':
 	while True:
 		print()
 		atv = str(input('Digite o código da ação que você quer calcular (ex: "MGLU3"): '))
+		tf = str(input('Calcular no timeframe diário ou no semanal? [D/S]: '))
 		print()
-		iniciar = FiboPoint(ativo=atv)
+		iniciar = FiboPoint(ativo=atv, timeframe=tf)
 		for item, dado in iniciar.calculo().items():
 			print(f'{item.capitalize()}: {dado:.2f}')
 		print()
