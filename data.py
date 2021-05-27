@@ -2,14 +2,14 @@ from datetime import date
 
 
 class Data:
-	def __init__(self):
-		self.hoje = date.today()
+	def __init__(self) -> None:
+		self.__hoje = date.today()
 		
-	def dia(self):
-		return f'0{self.hoje.day}' if self.hoje.day < 10 else self.hoje.day
+	def dia(self) -> int or str:
+		return f'0{self.__hoje.day}' if self.__hoje.day < 10 else self.__hoje.day
 	
-	def mes(self):
-		return f'0{self.hoje.month}' if self.hoje.month < 10 else self.hoje.month
+	def mes(self) -> int or str:
+		return f'0{self.__hoje.month}' if self.__hoje.month < 10 else self.__hoje.month
 	
-	def ano(self):
-		return self.hoje.year
+	def ano(self) -> int:
+		return self.__hoje.year
