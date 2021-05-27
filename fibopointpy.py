@@ -11,6 +11,9 @@ class FiboPoint:
 		self.acoes = list(get_stocks('brazil')['symbol'])
 	
 	def dados(self):
+		"""
+		:return: Busca os dados históricos dos preços para cada ativo e retorna a máxima e a mínima do último candle.
+		"""
 		calendar = Data()
 		try:
 			grafico = get_stock_historical_data(stock=self.ativo,
