@@ -3,14 +3,14 @@ from data import Data
 
 
 class FiboPoint:
-	def __init__(self, ativo: str):
+	def __init__(self, ativo: str) -> None:
 		"""
 		:param ativo: Digitar o código da ação que deseja calcular
 		"""
 		self.ativo = ativo.strip().upper()
 		self.__acoes = list(get_stocks('brazil')['symbol'])
 	
-	def __dados(self):
+	def __dados(self) -> list:
 		"""
 		:return: Busca os dados históricos dos preços para cada ativo e retorna a máxima e a mínima do último candle.
 		"""
@@ -31,7 +31,7 @@ class FiboPoint:
 		except Exception:
 			print('Não foi possível buscar os dados.')
 	
-	def calculo(self):
+	def calculo(self) -> dict:
 		"""
 		:return: Retorna um dicionário com os dados de Suporte, Resistência e Pivot.
 		"""
