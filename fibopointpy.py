@@ -8,9 +8,9 @@ class FiboPoint:
 		:param ativo: Digitar o código da ação que deseja calcular
 		"""
 		self.ativo = ativo.strip().upper()
-		self.acoes = list(get_stocks('brazil')['symbol'])
+		self.__acoes = list(get_stocks('brazil')['symbol'])
 	
-	def dados(self):
+	def __dados(self):
 		"""
 		:return: Busca os dados históricos dos preços para cada ativo e retorna a máxima e a mínima do último candle.
 		"""
@@ -35,8 +35,8 @@ class FiboPoint:
 		"""
 		:return: Retorna um dicionário com os dados de Suporte, Resistência e Pivot.
 		"""
-		if self.ativo in self.acoes:
-			dados = self.dados()
+		if self.ativo in self.__acoes:
+			dados = self.__dados()
 			pivot_point = round(sum(dados) / len(dados), 2)
 			diferenca = dados[0] - dados[1]  # Máxima - Mínima
 			s1 = round(pivot_point - 0.382 * diferenca, 2)
