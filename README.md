@@ -18,7 +18,7 @@ python fibopointpy.py (Ou: py fibopoint.py)</code></pre>
 <p>Ou...</p>
 <pre><code>pip install -r requirements.txt
 
-from fibopointpy import FiboPoint
+from FiboPoint import FiboPoint
 
 iniciar = FiboPoint('BBAS3', 'S')
 print(iniciar.calculo())</code></pre>
