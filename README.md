@@ -12,13 +12,15 @@
   <li>Para escolher o timeframe em que o indicador vai ser calculado basta inserir "D" para o gráfico diário e "S" para o semanal.</li>
   
   <h2>Como Usar ▶️</h2>
-<pre><code>pip install -r requirements.txt
-python fibopointpy.py (Ou: py fibopoint.py)</code></pre>
+  
+<pre><code>pip install -r requirements.txt</code></pre>
+<pre><code>python fibopointpy.py</code></pre>
 
 <p>Ou...</p>
-<pre><code>pip install -r requirements.txt
 
-from FiboPoint import FiboPoint
+<pre><code>pip install -r requirements.txt</code></pre>
+
+<pre><code>from FiboPoint import FiboPoint
 
 iniciar = FiboPoint('BBAS3', 'S')
 print(iniciar.calculo())</code></pre>
