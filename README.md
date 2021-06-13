@@ -14,11 +14,12 @@
   <h2>Como Usar ▶️</h2>
   
 <pre><code>pip install -r requirements.txt</code></pre>
+
+<p>E então:</p>
+
 <pre><code>python fibopointpy.py</code></pre>
 
 <p>Ou...</p>
-
-<pre><code>pip install -r requirements.txt</code></pre>
 
 <pre><code>from FiboPoint import FiboPoint
 
