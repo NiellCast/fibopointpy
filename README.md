@@ -9,17 +9,21 @@
   <li>Necessário ter a linguagem Python instalada no dispositivo.
   <li>Necessário ter o pacote "Investpy" instalado.
   <li>Script inspirado no método "LeandroStormer" para o indicador Pivot Point.
-  <li>Para escolher o timeframe basta inserir "D" para o gráfico diário e "S" para o semanal.</li>
+  <li>Para escolher o timeframe em que o indicador vai ser calculado basta inserir "D" para o gráfico diário e "S" para o semanal.</li>
   
   <h2>Como Usar ▶️</h2>
-<pre><code>pip install -r requirements.txt
-python fibopointpy.py (Ou: py fibopoint.py)</code></pre>
+  
+<pre><code>pip install -r requirements.txt</code></pre>
+
+<p>E então:</p>
+
+<pre><code>python fibopointpy.py</code></pre>
 
 <p>Ou...</p>
-<pre><code>pip install -r requirements.txt
 
-from FiboPoint import FiboPoint
+<pre><code>from FiboPoint import FiboPoint
 
 iniciar = FiboPoint('BBAS3', 'S')
 print(iniciar.calculo())</code></pre>
+
 <P>Será retornado um dicionário com os preços de suporte 1, 2 e 3. Resistência 1, 2 e 3 e Ponto de Pivot.</P>
