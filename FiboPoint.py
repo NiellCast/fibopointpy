@@ -24,7 +24,7 @@ class FiboPoint:
 		try:
 			grafico = get_stock_historical_data(stock=self.ativo,
 			                                    country='brazil',
-			                                    from_date=f'01/12/{calendar.ano() - 1}',
+			                                    from_date=f'{calendar.dia() - 7}/{calendar.mes()}/{calendar.ano()}',
 			                                    to_date=f'{calendar.dia()}/{calendar.mes()}/{calendar.ano()}',
 			                                    interval=self.timeframe)
 			
