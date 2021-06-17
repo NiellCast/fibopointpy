@@ -29,7 +29,7 @@ class FiboPoint:
 			                                    interval=self.timeframe)
 			
 			# Insere o nome das colunas e limpa o desnecessário.
-			grafico.columns = ['Maxima', 'Minima', 'Fechamento', 'Volume', 'Moeda']
+			grafico.columns = ['Abertura', 'Maxima', 'Minima', 'Fechamento', 'Volume', 'Moeda']
 			grafico.drop(['Fechamento', 'Moeda', 'Volume'], axis=1, inplace=True)
 			
 			return [grafico['Maxima'][-1], grafico['Minima'][-1], grafico['Abertura'][-1]]
@@ -48,12 +48,12 @@ class FiboPoint:
 			diferenca = dados[0] - dados[1]  # Máxima - Mínima
 			
 			pivot_point = round(sum(dados) / len(dados), 2)
-			s1 = round(abertura - 0.382 * diferenca, 2)
-			s2 = round(abertura - 0.618 * diferenca, 2)
-			s3 = round(abertura - 1 * diferenca, 2)
-			r1 = round(abertura + 0.382 * diferenca, 2)
-			r2 = round(abertura + 0.618 * diferenca, 2)
-			r3 = round(abertura + 1 * diferenca, 2)
+			s1 = round(pivot_point - 0.382 * diferenca, 2)
+			s2 = round(pivot_point - 0.618 * diferenca, 2)
+			s3 = round(pivot_point - 1 * diferenca, 2)
+			r1 = round(pivot_point + 0.382 * diferenca, 2)
+			r2 = round(pivot_point + 0.618 * diferenca, 2)
+			r3 = round(pivot_point + 1 * diferenca, 2)
 			
 			return {'pivot_point': pivot_point,
 			        'suporte_1': s1,
