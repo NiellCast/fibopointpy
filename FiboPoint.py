@@ -30,7 +30,7 @@ class FiboPoint:
 			
 			# Insere o nome das colunas e limpa o desnecessário.
 			grafico.columns = ['Maxima', 'Minima', 'Fechamento', 'Volume', 'Moeda']
-			grafico.drop(['Abertura', 'Fechamento', 'Moeda', 'Volume'], axis=1, inplace=True)
+			grafico.drop(['Fechamento', 'Moeda', 'Volume'], axis=1, inplace=True)
 			
 			return [grafico['Maxima'][-1], grafico['Minima'][-1], grafico['Abertura'][-1]]
 		
