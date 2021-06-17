@@ -8,8 +8,8 @@ while True:
 		tf = str(input('Calcular no timeframe diário ou no semanal? [D/S]: '))
 		print()
 		iniciar = FiboPoint(ativo=atv, timeframe=tf)
-		for item, dado in iniciar.calculo().items():
-			print(f'{item.capitalize()}: {dado:.2f}')
+		for item, preco in iniciar.calculo().items():
+			print(f'{item.capitalize()}: {preco:.2f}')
 		print()
 	except Exception:
 		print('Digite os dados corretamente!')
