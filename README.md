@@ -17,7 +17,7 @@
 
 <p>E então:</p>
 
-<pre><code>python fibopointpy.py</code></pre>
+<pre><code>python FPP.py</code></pre>
 
 <p>Ou...</p>
 
