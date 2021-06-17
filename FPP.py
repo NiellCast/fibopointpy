@@ -1,4 +1,4 @@
-from FiboPoint import FiboPoint
+from fibopoint import FiboPoint
 
 
 while True:
