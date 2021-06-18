@@ -16,44 +16,45 @@ class FiboPoint:
 		self.ativo = ativo.strip().upper()
 		self.__acoes = list(get_stocks('brazil')['symbol'])
 	
-	def __dados(self) -> list:
+	def dados(self) -> dict:
 		"""
 		:return: Busca os dados históricos dos preços para cada ativo e retorna a máxima e a mínima do último candle.
 		"""
 		calendar = Data()
-		try:
-			grafico = get_stock_historical_data(stock=self.ativo,
-			                                    country='brazil',
-			                                    from_date=f'{calendar.dia() - 7}/{calendar.mes()}/{calendar.ano()}',
-			                                    to_date=f'{calendar.dia()}/{calendar.mes()}/{calendar.ano()}',
-			                                    interval=self.timeframe)
-			
-			# Insere o nome das colunas e limpa o desnecessário.
-			grafico.columns = ['Abertura', 'Maxima', 'Minima', 'Fechamento', 'Volume', 'Moeda']
-			grafico.drop(['Fechamento', 'Moeda', 'Volume'], axis=1, inplace=True)
-			
-			return [grafico['Maxima'][-1], grafico['Minima'][-1], grafico['Abertura'][-1]]
 		
-		except Exception:
-			print('Não foi possível buscar os dados.')
-	
+		grafico = get_stock_historical_data(stock=self.ativo,
+		                                    country='brazil',
+		                                    from_date=f'01/01/{calendar.ano() - 1}',
+		                                    to_date=f'{calendar.dia()}/{calendar.mes()}/{calendar.ano()}',
+		                                    interval=self.timeframe)
+		
+		# Insere o nome das colunas e limpa o desnecessário.
+		grafico.columns = ['Abertura', 'Maxima', 'Minima', 'Fechamento', 'Volume', 'Moeda']
+		grafico.drop(['Moeda', 'Volume'], axis=1, inplace=True)
+		
+		return {'maxima': grafico['Maxima'][-2], 'minima': grafico['Minima'][-2],
+		        'fechamento': grafico['Fechamento'][-2], 'abertura': grafico['Abertura'][-1]}
+
 	def calculo(self) -> dict:
 		"""
 		:return: Retorna um dicionário com os dados de Suporte, Resistência e Pivot.
 		"""
 		
 		if self.ativo in self.__acoes:
-			dados = self.__dados()
-			abertura = dados[2]
-			diferenca = dados[0] - dados[1]  # Máxima - Mínima
+			abertura = self.dados()['abertura']
+			maxima = self.dados()['maxima']
+			minima = self.dados()['minima']
+			fechamento = self.dados()['abertura']
 			
-			pivot_point = round(sum(dados) / len(dados), 2)
-			s1 = round(pivot_point - 0.382 * diferenca, 2)
-			s2 = round(pivot_point - 0.618 * diferenca, 2)
-			s3 = round(pivot_point - 1 * diferenca, 2)
-			r1 = round(pivot_point + 0.382 * diferenca, 2)
-			r2 = round(pivot_point + 0.618 * diferenca, 2)
-			r3 = round(pivot_point + 1 * diferenca, 2)
+			pivot_point = round((maxima + minima + fechamento) / 3, 2)
+
+			r1 = round(pivot_point + ((maxima - minima) * .382), 2)
+			r2 = round(pivot_point + ((maxima - minima) * .618), 2)
+			r3 = round(pivot_point + ((maxima - minima) * 1), 2)
+
+			s1 = round(pivot_point - ((maxima - minima) - .382), 2)
+			s2 = round(pivot_point - ((maxima - minima) - .618), 2)
+			s3 = round(pivot_point - ((maxima - minima) - 1), 2)
 			
 			return {'pivot_point': pivot_point,
 			        'suporte_1': s1,
