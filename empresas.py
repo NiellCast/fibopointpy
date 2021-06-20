@@ -1,9 +1,9 @@
-import investpy
+from investpy import get_stocks
 
 
 class Empresas:
 	def __init__(self):
-		self.empresas = investpy.get_stocks('brazil')
+		self.empresas = get_stocks('brazil')
 		
 	def nomes(self, codigo):
 		nomes_das_empresas = self.empresas["symbol"]
