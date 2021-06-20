@@ -22,7 +22,7 @@ while True:
 		print()
 		
 	except AttributeError:
-		print('Digite os dados corretamente!')
+		print('DIGITE OS DADOS CORRETAMENTE!')
 		print()
 		
 	continuar = str(input('Continuar calculando? [S/N]: ')).strip().upper()
