@@ -1,6 +1,7 @@
 from fibopoint import FiboPoint
+from empresas import Empresas
 
-
+empresa = Empresas()
 while True:
 	print()
 	try:
@@ -10,14 +11,14 @@ while True:
 
 		iniciar = FiboPoint(ativo=ativo, timeframe=timeframe)
 		
-		print("=" * 35)
-		print(f'Ponto de Pivot em {ativo.upper()} de EMPRESA.')
-		print("=" * 35)
+		print("=" * (28 + len(empresa.nomes(ativo.upper()))))
+		print(f'Ponto de Pivot em {ativo.upper()} de {empresa.nomes(ativo.upper())}.')
+		print("=" * (28 + len(empresa.nomes(ativo.upper()))))
 		
 		for item, preco in iniciar.calculo().items():
 			print(f'{item.capitalize().replace("_", " ")}: {preco:.2f}')
 			
-		print("=" * 35)
+		print("=" * (28 + len(empresa.nomes(ativo.upper()))))
 		print()
 		
 	except AttributeError:
