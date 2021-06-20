@@ -8,24 +8,26 @@ class FiboPoint:
 		:param ativo: Digitar o código da ação que deseja calcular.
 		:param timeframe: Digitar qual timeframe (D - Diário, S - Semanal) quer calcular.
 		"""
+		
 		if timeframe.strip().upper() == 'S':
 			self.timeframe = 'Weekly'
+			self.calendario = Data(14)
 		elif timeframe.strip().upper() == 'D':
 			self.timeframe = 'Daily'
+			self.calendario = Data(3)
 		
 		self.ativo = ativo.strip().upper()
 		self.__acoes = list(get_stocks('brazil')['symbol'])
-	
+
 	def dados(self) -> dict:
 		"""
 		:return: Busca os dados históricos dos preços para cada ativo e retorna a máxima e a mínima do último candle.
 		"""
-		calendar = Data()
 		
 		grafico = get_stock_historical_data(stock=self.ativo,
 		                                    country='brazil',
-		                                    from_date=f'01/01/{calendar.ano() - 1}',
-		                                    to_date=f'{calendar.dia()}/{calendar.mes()}/{calendar.ano()}',
+		                                    from_date=self.calendario.ontem(),
+		                                    to_date=self.calendario.hoje(),
 		                                    interval=self.timeframe)
 		
 		# Insere o nome das colunas e limpa o desnecessário.
@@ -41,7 +43,6 @@ class FiboPoint:
 		"""
 		
 		if self.ativo in self.__acoes:
-			abertura = self.dados()['abertura']
 			maxima = self.dados()['maxima']
 			minima = self.dados()['minima']
 			fechamento = self.dados()['abertura']

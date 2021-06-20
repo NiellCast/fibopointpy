@@ -1,15 +1,19 @@
-from datetime import date
+from datetime import date, timedelta
 
 
 class Data:
-	def __init__(self) -> None:
-		self.__hoje = date.today()
+	def __init__(self, dias: int) -> None:
+		self.data = date.today()
+		self.subtracao = timedelta(days=dias)
 		
-	def dia(self) -> int or str:
-		return f'0{self.__hoje.day}' if self.__hoje.day < 10 else self.__hoje.day
-	
-	def mes(self) -> int or str:
-		return f'0{self.__hoje.month}' if self.__hoje.month < 10 else self.__hoje.month
-	
-	def ano(self) -> int:
-		return self.__hoje.year
+	def ontem(self) -> str:
+		ontem = self.data - self.subtracao
+		ontem = ontem.strftime('%d/%m/%Y')
+		
+		return ontem
+		
+	def hoje(self) -> str:
+		hoje = self.data.strftime('%d/%m/%Y')
+		
+		return hoje
+
