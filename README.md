@@ -12,7 +12,7 @@
   
   <h2>Como Usar ▶️</h2>
  
- <p>Vá até a pasta e com o prompt de comando, digite:</>p
+ <p>Vá até a pasta e com o prompt de comando, digite:</p>
 <pre><code>pip install -r requirements.txt</code></pre>
 
 <p>E então:</p>
