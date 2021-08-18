@@ -11,18 +11,12 @@
   <li>Para escolher o timeframe em que o indicador vai ser calculado basta inserir "D" para o gráfico diário e "S" para o semanal.</li>
   
   <h2>Como Usar ▶️</h2>
-  
+ 
+ <p>Vá até a pasta e com o prompt de comando, digite:</p>
 <pre><code>pip install -r requirements.txt</code></pre>
 
 <p>E então:</p>
 
-<pre><code>python FPP.py</code></pre>
-
-<p>Ou...</p>
-
-<pre><code>from FiboPoint import FiboPoint
-
-iniciar = FiboPoint('BBAS3', 'S')
-print(iniciar.calculo())</code></pre>
+<pre><code>python fibopointpy.py</code></pre>
 
 <P>Será retornado um dicionário com os preços de suporte 1, 2 e 3. Resistência 1, 2 e 3 e Ponto de Pivot.</P>
