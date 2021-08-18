@@ -12,6 +12,7 @@ class Empresas:
 		"""
 		nomes_das_empresas = self.empresas["symbol"]
 		
-		lista = dict([(nomes_das_empresas[contador], ativo) for contador, ativo in enumerate(self.empresas['name'])])
+		name_by_code =\
+			dict([(nomes_das_empresas[contador], ativo) for contador, ativo in enumerate(self.empresas['name'])])
 		
-		return lista.get(codigo)
+		return name_by_code.get(codigo)
