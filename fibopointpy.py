@@ -1,5 +1,5 @@
-from fibopoint import FiboPoint
-from empresas import Empresas
+from data_request import FiboPoint
+from info import Empresas
 from os import system, name
 
 
