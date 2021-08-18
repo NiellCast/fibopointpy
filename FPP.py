@@ -1,16 +1,22 @@
 from fibopoint import FiboPoint
 from empresas import Empresas
+from os import system, name
+
 
 empresa = Empresas()
 while True:
 	print()
 	try:
+		system('cls' if name == 'nt' else 'clear')
 		ativo = str(input('Digite o código da ação que você quer calcular (ex: "MGLU3"): '))
+		
+		system('cls' if name == 'nt' else 'clear')
 		timeframe = str(input('Calcular no timeframe diário ou no semanal? [D/S]: '))
 		print()
 
 		iniciar = FiboPoint(ativo=ativo, timeframe=timeframe)
 		
+		system('cls' if name == 'nt' else 'clear')
 		print("=" * (28 + len(empresa.nomes(ativo.upper()))))
 		print(f'Ponto de Pivot em {ativo.upper()} de {empresa.nomes(ativo.upper())}.')
 		print("=" * (28 + len(empresa.nomes(ativo.upper()))))
