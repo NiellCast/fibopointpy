@@ -16,11 +16,11 @@
 
 <p>E então:</p>
 
-<pre><code>python FPP.py</code></pre>
+<pre><code>python fibopointpy.py</code></pre>
 
 <p>Ou...</p>
 
-<pre><code>from FiboPoint import FiboPoint
+<pre><code>from data_request import FiboPoint
 
 iniciar = FiboPoint('BBAS3', 'S')
 print(iniciar.calculo())</code></pre>
