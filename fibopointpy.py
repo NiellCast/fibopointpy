@@ -1,3 +1,6 @@
+__author__ = "Daniell Castelo Branco Ciriaco"
+__email__ = "niellcast.contato@outlook.com"
+
 from data_request import FiboPoint
 from info import Empresas
 from os import system, name
