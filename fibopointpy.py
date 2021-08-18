@@ -3,25 +3,25 @@ __email__ = "niellcast.contato@outlook.com"
 
 from data_request import FiboPoint
 from info import Empresas
-from os import system, name
 from install import instalar_requisitos
+from style_functions import pular, limpar
 
 
-def run():
+def run() -> None:
 	empresa = Empresas()
 	while True:
-		print()
+		pular()
 		try:
-			system('cls' if name == 'nt' else 'clear')
+			limpar()
 			ativo = str(input('Digite o código da ação que você quer calcular (ex: "MGLU3"): '))
 			
-			system('cls' if name == 'nt' else 'clear')
+			limpar()
 			timeframe = str(input('Calcular no timeframe diário ou no semanal? [D/S]: '))
-			print()
+			pular()
 	
 			iniciar = FiboPoint(ativo=ativo, timeframe=timeframe)
 			
-			system('cls' if name == 'nt' else 'clear')
+			limpar()
 			print("=" * (28 + len(empresa.nomes(ativo.upper()))))
 			print(f'Ponto de Pivot em {ativo.upper()} de {empresa.nomes(ativo.upper())}.')
 			print("=" * (28 + len(empresa.nomes(ativo.upper()))))
@@ -30,19 +30,20 @@ def run():
 				print(f'{item.capitalize().replace("_", " ")}: {preco:.2f}')
 				
 			print("=" * (28 + len(empresa.nomes(ativo.upper()))))
-			print()
+			pular()
 			
 		except AttributeError:
 			print('DIGITE OS DADOS CORRETAMENTE!')
-			print()
+			pular()
 			
 		continuar = str(input('Continuar calculando? [S/N]: ')).strip().upper()
-		print()
+		pular()
 	
 		if continuar == 'N':
 			break
 
 
 if __name__ == '__main__':
+	limpar()
 	instalar_requisitos()
 	run()
