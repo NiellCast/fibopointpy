@@ -1,1 +1,1 @@
-investpy==1.0.6
+investpy>=1.0.6
