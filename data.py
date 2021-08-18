@@ -10,17 +10,17 @@ class Data:
 		self.data = date.today()
 		self.subtracao = timedelta(days=dias)
 		
-	def ontem(self) -> str:
+	def data_inicial(self) -> str:
 		"""
 		:return: Retorna a data do dia anterior em formato de string (dia/mês/ano)
 		"""
 		
-		ontem = self.data - self.subtracao
-		ontem = ontem.strftime('%d/%m/%Y')
+		inicial = self.data - self.subtracao
+		inicial = inicial.strftime('%d/%m/%Y')
 		
-		return ontem
+		return inicial
 		
-	def hoje(self) -> str:
+	def data_atual(self) -> str:
 		hoje = self.data.strftime('%d/%m/%Y')
 		
 		return hoje
