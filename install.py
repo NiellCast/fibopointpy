@@ -5,6 +5,10 @@ from subprocess import call
 
 
 def instalar_requisitos() -> None:
+	"""
+	:return: Instala os requisitos automaticamente.
+	"""
+	
 	try:
 		call('pip install --upgrade -r requirements.txt')
 	except Exception:
