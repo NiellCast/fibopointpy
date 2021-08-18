@@ -7,7 +7,6 @@
   <li>Use por sua conta e risco. Não me responsabilizo por possíveis perdas financeiras.
   <li>Este script não funciona para o mercado fracionário.
   <li>Necessário ter a linguagem Python instalada no dispositivo.
-  <li>Necessário ter o pacote "Investpy" instalado.
   <li>Script inspirado no método "LeandroStormer" para o indicador Pivot Point.
   <li>Para escolher o timeframe em que o indicador vai ser calculado basta inserir "D" para o gráfico diário e "S" para o semanal.</li>
   
