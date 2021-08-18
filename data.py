@@ -1,3 +1,6 @@
+__author__ = "Daniell Castelo Branco Ciriaco"
+__email__ = "niellcast.contato@outlook.com"
+
 from datetime import date, timedelta
 
 
