@@ -18,22 +18,38 @@ def run() -> None:
 			limpar()
 			timeframe = str(input('Calcular no timeframe diário ou no semanal? [D/S]: '))
 			pular()
-	
+			
 			iniciar = FiboPoint(ativo=ativo, timeframe=timeframe)
+			tamanho = 28 + len(empresa.nomes(ativo.upper()))
 			
 			limpar()
-			print("=" * (28 + len(empresa.nomes(ativo.upper()))))
+			print("=" * tamanho)
 			print(f'Ponto de Pivot em {ativo.upper()} de {empresa.nomes(ativo.upper())}.')
-			print("=" * (28 + len(empresa.nomes(ativo.upper()))))
+			print("=" * tamanho)
 			
 			for item, preco in iniciar.calculo().items():
 				print(f'{item.capitalize().replace("_", " ")}: {preco:.2f}')
 				
-			print("=" * (28 + len(empresa.nomes(ativo.upper()))))
+			print("=" * tamanho)
 			pular()
 			
 		except AttributeError:
-			print('DIGITE OS DADOS CORRETAMENTE!')
+			limpar()
+			
+			print("=" * tamanho)
+			print(f'{"TIME FRAME INCORRETO!":^{tamanho}}')
+			print(f'{"APENAS D ou S SÃO ACEITOS!":^{tamanho}}')
+			print("=" * tamanho)
+			
+			pular()
+		
+		except TypeError:
+			limpar()
+			
+			print("=" * 40)
+			print(f'{"DADOS INCORRETOS FORAM DIGITADOS":^40}')
+			print("=" * 40)
+			
 			pular()
 			
 		continuar = str(input('Continuar calculando? [S/N]: ')).strip().upper()
