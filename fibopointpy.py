@@ -3,7 +3,7 @@ __email__ = "niellcast.contato@outlook.com"
 
 from data_request import FiboPoint
 from info import Empresas
-from install import instalar_requisitos
+from instalar_requisitos import instalar_requisitos
 from style.style_functions import pular, limpar
 
 
