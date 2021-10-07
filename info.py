@@ -3,16 +3,15 @@ from investpy import get_stocks
 
 class Empresas:
 	def __init__(self) -> None:
-		self.empresas = get_stocks('brazil')
-		
-	def nomes(self, codigo: str) -> list:
+		self._nomes = get_stocks('brazil')['name']
+		self._simbolos = get_stocks('brazil')['symbol']
+
+	def nome(self, codigo: str) -> list:
 		"""
 		:param codigo: Recebe o código da ação de uma empresa.
 		:return: Retorna o nome da empresa baseado no código inserido.
 		"""
-		nomes_das_empresas = self.empresas["symbol"]
-		
-		name_by_code =\
-			dict([(nomes_das_empresas[contador], ativo) for contador, ativo in enumerate(self.empresas['name'])])
+
+		name_by_code = dict([(self._simbolos[contador], ativo) for contador, ativo in enumerate(self._nomes)])
 		
 		return name_by_code.get(codigo)
