@@ -1,6 +1,3 @@
-__author__ = "Daniell Castelo Branco Ciriaco"
-__email__ = "niellcast.contato@outlook.com"
-
 from investpy import get_stocks, get_stock_historical_data
 from time.calendar import Data
 
