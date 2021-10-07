@@ -1,7 +1,7 @@
 from investpy import get_stocks
 
 
-class Empresas:
+class NomeDasEmpresas:
 	def __init__(self) -> None:
 		self._nomes = get_stocks('brazil')['name']
 		self._simbolos = get_stocks('brazil')['symbol']
