@@ -25,10 +25,10 @@ class FiboPoint:
 		"""
 		
 		grafico = get_stock_historical_data(stock=self.ativo,
-		                                    country='brazil',
-		                                    from_date=self.calendario.data_inicial(),
-		                                    to_date=self.calendario.data_atual(),
-		                                    interval=self.timeframe)
+											country='brazil',
+											from_date=self.calendario.pegar_data_inicial(),
+											to_date=self.calendario.pegar_data_atual(),
+											interval=self.timeframe)
 		
 		# Insere o nome das colunas e limpa o desnecessário.
 		grafico.columns = ['Abertura', 'Maxima', 'Minima', 'Fechamento', 'Volume', 'Moeda']

@@ -1,7 +1,7 @@
 __author__ = "Daniell Castelo Branco Ciriaco"
 __email__ = "niellcast.contato@outlook.com"
 
-from data_request import FiboPoint
+from data.data_request import FiboPoint
 from names.search_name_by_code import NomeDasEmpresas
 from install_requirements.instalacao import Instalacao
 from style.style_functions import Estilo
