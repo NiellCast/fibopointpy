@@ -7,6 +7,11 @@ class Calculo:
         self.__tempo = Data()
 
     def calcular_parametros(self) -> list:
+        """
+        :return: Retorna uma lista contendo o timeframe escolhido de forma técnica
+         e a data subtraída pela quantidade de dias.
+        """
+
         if self.__timeframe == 'S':
             return ['Weekly', self.__tempo.pegar_data_inicial(14)]
 
