@@ -2,64 +2,69 @@ __author__ = "Daniell Castelo Branco Ciriaco"
 __email__ = "niellcast.contato@outlook.com"
 
 from data_request import FiboPoint
-from names.search_name_by_code import Empresas
-from instalar_requisitos import instalar_requisitos
-from style.style_functions import pular, limpar
+from names.search_name_by_code import NomeDasEmpresas
+from install_requirements.instalacao import Instalacao
+from style.style_functions import Estilo
 
 
-def run() -> None:
-	empresa = Empresas()
+def main() -> None:
+	empresa = NomeDasEmpresas()
+
 	while True:
-		pular()
+		Estilo.pular_linha()
+
 		try:
-			limpar()
+			Estilo.limpar_tela()
+
 			ativo = str(input('Digite o código da ação que você quer calcular (ex: "MGLU3"): '))
-			
-			limpar()
+
+			Estilo.limpar_tela()
 			timeframe = str(input('Calcular no timeframe diário ou no semanal? [D/S]: '))
-			pular()
-			
+			Estilo.pular_linha()
+
 			iniciar = FiboPoint(ativo=ativo, timeframe=timeframe)
-			tamanho = 28 + len(empresa.nomes(ativo.upper()))
-			
-			limpar()
+			tamanho = 28 + len(empresa.nome(ativo.upper()))
+
+			Estilo.limpar_tela()
 			print("=" * tamanho)
-			print(f'Ponto de Pivot em {ativo.upper()} de {empresa.nomes(ativo.upper())}.')
+			print(f'Ponto de Pivot em {ativo.upper()} de {empresa.nome(ativo.upper())}.')
 			print("=" * tamanho)
-			
+
 			for item, preco in iniciar.calculo().items():
 				print(f'{item.capitalize().replace("_", " ")}: {preco:.2f}')
-				
+
 			print("=" * tamanho)
-			pular()
-			
+			Estilo.pular_linha()
+
 		except AttributeError:
-			limpar()
-			
+			Estilo.limpar_tela()
+
 			print("=" * tamanho)
 			print(f'{"TIME FRAME INCORRETO!":^{tamanho}}')
 			print(f'{"APENAS D ou S SÃO ACEITOS!":^{tamanho}}')
 			print("=" * tamanho)
-			
-			pular()
-		
+
+			Estilo.pular_linha()
+
 		except TypeError:
-			limpar()
-			
+			Estilo.limpar_tela()
+
 			print("=" * 40)
 			print(f'{"DADOS INCORRETOS FORAM DIGITADOS":^40}')
 			print("=" * 40)
-			
-			pular()
-			
+
+			Estilo.pular_linha()
+
 		continuar = str(input('Continuar calculando? [S/N]: ')).strip().upper()
-		pular()
-	
+		Estilo.pular_linha()
+
 		if continuar == 'N':
 			break
 
 
 if __name__ == '__main__':
-	limpar()
-	instalar_requisitos()
-	run()
+	Estilo.limpar_tela()
+
+	Instalacao.instalar_requisitos()
+
+	main()
