@@ -22,7 +22,7 @@ def main() -> None:
 			timeframe = str(input('Calcular no timeframe diário ou no semanal? [D/S]: '))
 			Estilo.pular_linha()
 
-			iniciar = FiboPoint(ativo=ativo, timeframe=timeframe)
+			indicador = FiboPoint(ativo=ativo, timeframe=timeframe)
 			tamanho = 28 + len(empresa.nome(ativo.upper()))
 
 			Estilo.limpar_tela()
@@ -30,7 +30,7 @@ def main() -> None:
 			print(f'Ponto de Pivot em {ativo.upper()} de {empresa.nome(ativo.upper())}.')
 			print("=" * tamanho)
 
-			for item, preco in iniciar.calculo().items():
+			for item, preco in indicador.receber_dados().items():
 				print(f'{item.capitalize().replace("_", " ")}: {preco:.2f}')
 
 			print("=" * tamanho)
