@@ -64,7 +64,5 @@ def main() -> None:
 
 if __name__ == '__main__':
 	Estilo.limpar_tela()
-
 	Instalacao.instalar_requisitos()
-
 	main()
