@@ -11,6 +11,6 @@
   
   <h2>Como Usar ▶️</h2>
 
-<pre><code>python fibopointpy.py</code></pre>
+<pre><code>Script ainda não finalizado.</code></pre>
 
 <P>Será retornado um dicionário com os preços de suporte 1, 2 e 3. Resistência 1, 2 e 3 e Ponto de Pivot.</P>
