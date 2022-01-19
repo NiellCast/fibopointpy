@@ -4,17 +4,18 @@ from data.verificar_ativo import Verificacao
 
 
 class MarketData:
-    def __init__(self) -> None:
+    def __init__(self, ativo: str) -> None:
         self.__tempo = Data()
+        self.__ativo = ativo
 
-    def receber_dados(self, ativo: str) -> dict:
+    def receber_dados(self) -> dict:
         """
         :return: Busca os dados históricos dos preços para cada ativo e retorna a máxima e a mínima do último candle.
         """
 
-        if Verificacao.verificar(ativo):
+        if Verificacao.verificar(self.__ativo):
             grafico = get_stock_historical_data(
-                stock=ativo,
+                stock=self.__ativo,
                 country='brazil',
                 from_date=self.__tempo.pegar_data_inicial(2),
                 to_date=self.__tempo.pegar_data_atual(),
