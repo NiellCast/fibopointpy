@@ -8,7 +8,7 @@ class Data:
 	def pegar_data_inicial(self, dias: int) -> str:
 		"""
 		:param dias: Recebe a quantidade de dias para subtrair e calcular data - dias.
-		:return: Retorna a data do dia anterior em formato de string (dia/mês/ano)
+		:return: Retorna a data do dia anterior em formato de string (dia/mês/ano).
 		"""
 
 		subtracao = timedelta(days=dias)
@@ -19,4 +19,7 @@ class Data:
 		return inicial
 		
 	def pegar_data_atual(self) -> str:
+		"""
+		:return: Retorna a data atual em tipo string (dia/mês/ano).
+		"""
 		return self._data.strftime('%d/%m/%Y')
