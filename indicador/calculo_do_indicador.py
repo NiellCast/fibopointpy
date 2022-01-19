@@ -1,12 +1,14 @@
 from investpy import get_stocks
+from data.data_request import MarketData
 
 
 class PontoDePivot:
     def __init__(self, ativo: str):
         self.__acoes = list(get_stocks('brazil')['symbol'])
         self.__ativo = ativo
+        self.__dados = MarketData()
 
-    def calcular_indicador(self, maxima, minima, fechamento, abertura_do_dia) -> dict:
+    def calcular_indicador(self) -> dict:
         """
         :return: Retorna um dicionário com os dados de Suporte, Resistência e Ponto de Pivot.
         """
@@ -18,7 +20,7 @@ class PontoDePivot:
             r2 = round(abertura_do_dia + ((maxima - minima) * 1), 2)
             r3 = round(abertura_do_dia + ((maxima - minima) * 1.618), 2)
 
-            s1 = round(abertura_do_dia - ((maxima - maxima) * .618), 2)
+            s1 = round(abertura_do_dia - ((maxima - minima) * .618), 2)
             s2 = round(abertura_do_dia - ((maxima - minima) * 1), 2)
             s3 = round(abertura_do_dia - ((maxima - minima) * 1.618), 2)
 
