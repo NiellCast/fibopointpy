@@ -3,3 +3,4 @@
 data/__pycache__/
 tempo/__pycache__/
 indicador/__pycache__/
+.env
