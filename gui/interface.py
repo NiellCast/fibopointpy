@@ -1,12 +1,16 @@
 import streamlit as st
 from indicador.calculo_do_indicador import PontoDePivot
+from database.db import BancoDeDados
+from os import getenv
+from dotenv import load_dotenv
 
 
 class App:
+    load_dotenv()
+
     def __init__(self) -> None:
         self.__indicador = PontoDePivot()
-
-        self.__codigo = ''
+        self.__db = BancoDeDados(getenv('DATABASE'))
 
         self.config = st.set_page_config(
             page_title='Ponto de Pivot',
@@ -24,30 +28,39 @@ class App:
             key='stock'
         ).strip().upper()
 
-        self.botao()
+        self.criar_botao()
 
-    @property
-    def codigo(self):
-        return self.__codigo
-
-    @codigo.setter
-    def codigo(self, codigo):
-        self.__codigo = codigo
-
-    def botao(self):
+    def criar_botao(self) -> None:
         result = st.button('Calcular',
-                           on_click=self.limpar)
+                           on_click=self.receber_dados)
 
-        if result and len(self.codigo) > 0:
-            self.resultado(self.codigo)
+        if result and len(self.__db.listar()[0]) > 0:
+            self.mostrar_resultado()
 
-    def resultado(self, cod) -> None:
-        st.markdown(f'* **Nome**: _{cod}_')
+    def receber_dados(self) -> None:
+        dados = self.__indicador.calcular_indicador(self.stock_name)
 
-    def limpar(self):
-        # self.__db.registrar(self.stock_name, self.__indicador.calcular_indicador(self.stock_name))
-        self.codigo = self.stock_name
-        st.session_state["stock"] = ""
+        if dados:
+            self.__db.salvar(self.stock_name, dados['resistencia_4'], dados['resistencia_3'], dados['resistencia_2'],
+                             dados['resistencia_1'], dados['pivot_point'], dados['suporte_1'], dados['suporte_2'],
+                             dados['suporte_3'], dados['suporte_4'])
 
-    def acao(self):
-        self.limpar()
+            st.session_state["stock"] = ""
+
+    @staticmethod
+    def escrever_na_tela(titulo: str, valor: str) -> None:
+        st.markdown(f'* **{titulo}**: _{valor}_')
+
+    def mostrar_resultado(self) -> None:
+        self.escrever_na_tela('Nome', self.__db.listar()[0])
+        self.escrever_na_tela('Resistência 4', self.__db.listar()[1])
+        self.escrever_na_tela('Resistência 3', self.__db.listar()[2])
+        self.escrever_na_tela('Resistência 2', self.__db.listar()[3])
+        self.escrever_na_tela('Resistência 1', self.__db.listar()[4])
+        self.escrever_na_tela('Ponto de Pivot', self.__db.listar()[5])
+        self.escrever_na_tela('Suporte 1', self.__db.listar()[6])
+        self.escrever_na_tela('Suporte 2', self.__db.listar()[7])
+        self.escrever_na_tela('Suporte 3', self.__db.listar()[8])
+        self.escrever_na_tela('Suporte 4', self.__db.listar()[9])
+
+        self.__db.remover(self.__db.listar()[0])
