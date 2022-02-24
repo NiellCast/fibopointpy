@@ -12,4 +12,4 @@
 
 <pre>Você pode usar esta ferramenta clicando aqui.</pre>
 
-<P>Será retornado um dicionário com os preços do <strong>Ponto de Pivot</strong> e quatro níveis de <strong>suporte</strong> e <strong>Resistência</strong>.</P>
+<p>Será retornado um dicionário com os preços do <em>Ponto de Pivot</em> e quatro níveis de <em>suporte</em> e <em>Resistência</em>.</p>
