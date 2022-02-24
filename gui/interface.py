@@ -48,8 +48,8 @@ class App:
             st.session_state["stock"] = ""
 
     @staticmethod
-    def escrever_na_tela(titulo: str, valor: str) -> None:
-        st.markdown(f'* **{titulo}**: _{valor}_')
+    def escrever_na_tela(item: str, valor: str) -> None:
+        st.markdown(f'* **{item}**: _{valor}_')
 
     def mostrar_resultado(self) -> None:
         self.escrever_na_tela('Nome', self.__db.listar()[0])

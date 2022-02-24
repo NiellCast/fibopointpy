@@ -8,7 +8,6 @@ class BancoDeDados:
 
     def salvar(self, codigo: str, resistencia4: str, resistencia3: str, resistencia2: str, resistencia1: str, pp: str,
                suporte1: str, suporte2: str, suporte3: str, suporte4: str) -> None:
-
         self.cursor.execute(
             'INSERT OR IGNORE INTO temp (codigo, resistencia4, resistencia3, resistencia2, resistencia1, pp,'
             ' suporte1, suporte2, suporte3, suporte4) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
