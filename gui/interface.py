@@ -34,18 +34,20 @@ class App:
         result = st.button('Calcular',
                            on_click=self.receber_dados)
 
-        if result and len(self.__db.listar()[0]) > 0:
-            self.mostrar_resultado()
+        if result:
+            if len(self.stock_name) > 0 and 'F' not in self.stock_name[-1]:
+                self.mostrar_resultado()
 
     def receber_dados(self) -> None:
-        dados = self.__indicador.calcular_indicador(self.stock_name)
+        if len(self.stock_name) > 0 and 'F' not in self.stock_name[-1]:
+            dados = self.__indicador.calcular_indicador(self.stock_name)
 
-        if dados:
-            self.__db.salvar(self.stock_name, dados['resistencia_4'], dados['resistencia_3'], dados['resistencia_2'],
-                             dados['resistencia_1'], dados['pivot_point'], dados['suporte_1'], dados['suporte_2'],
-                             dados['suporte_3'], dados['suporte_4'])
+            if dados:
+                self.__db.salvar(self.stock_name, dados['resistencia_4'], dados['resistencia_3'], dados['resistencia_2'],
+                                 dados['resistencia_1'], dados['pivot_point'], dados['suporte_1'], dados['suporte_2'],
+                                 dados['suporte_3'], dados['suporte_4'])
 
-            st.session_state["stock"] = ""
+                st.session_state["stock"] = ""
 
     @staticmethod
     def escrever_na_tela(item: str, valor: str) -> None:
