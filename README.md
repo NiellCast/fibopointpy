@@ -5,12 +5,11 @@
   
   <li>Script feito inicialmente para DayTrade.
   <li>Use por sua conta e risco. Não me responsabilizo por possíveis perdas financeiras.
-  <li>Este script não funciona para o mercado fracionário.
-  <li>Script inspirado no método "LeandroStormer" para o indicador Pivot Point.
-  <li>Para escolher o timeframe em que o indicador vai ser calculado basta inserir "D" para o gráfico diário e "S" para o semanal.</li>
+  <li>Este script funciona apenas para o mercado à vista.
+  <li>Script inspirado no método "LeandroStormer" para o indicador Pivot Point (Ponto de Pivot).
   
   <h2>Como Usar ▶️</h2>
 
-<pre><code>Script ainda não finalizado.</code></pre>
+<pre><code>Você pode usar esta ferramenta clicando aqui.</code></pre>
 
 <P>Será retornado um dicionário com os preços de suporte 1, 2 e 3. Resistência 1, 2 e 3 e Ponto de Pivot.</P>
