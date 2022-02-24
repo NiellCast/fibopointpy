@@ -10,6 +10,6 @@
   
   <h2>Como Usar ▶️</h2>
 
-<pre>Você pode usar esta ferramenta clicando aqui.</pre>
+<p  align="center"><pre>Você pode usar esta ferramenta clicando aqui.</pre></p>
 
-<p align="center">Será retornado um dicionário com os preços do <em>Ponto de Pivot</em> e quatro níveis de <em>suporte</em> e <em>Resistência</em>.</p>
+<p>Será retornado um dicionário com os preços do <em>Ponto de Pivot</em> e quatro níveis de <em>suporte</em> e <em>Resistência</em>.</p>
