@@ -3,6 +3,7 @@
 data/__pycache__/
 tempo/__pycache__/
 indicador/__pycache__/
-gui/__pycache__/interface.cpython-310.pyc
+/gui/__pycache__/
 dados.db
 .env
+/database/__pycache__/
