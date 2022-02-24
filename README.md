@@ -4,10 +4,11 @@
   <h2 align="center">Informações ⚠️</h2>
   
   <ul align="center">
-  <liScript feito inicialmente para DayTrade.
-  <li>Use por sua conta e risco. Não me responsabilizo por possíveis perdas financeiras.
-  <li>Este script funciona apenas para o mercado à vista.
-  <li>Script inspirado no método "LeandroStormer" para o indicador Pivot Point (Ponto de Pivot).</ul>
+    <liScript feito inicialmente para DayTrade.
+    <li>Use por sua conta e risco. Não me responsabilizo por possíveis perdas financeiras.
+    <li>Este script funciona apenas para o mercado à vista.
+    <li>Script inspirado no método "LeandroStormer" para o indicador Pivot Point (Ponto de Pivot).
+  </ul>
   
   <h2 align="center">Como Usar ▶️</h2>
 
