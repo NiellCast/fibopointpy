@@ -11,6 +11,6 @@
   
   <h2 align="center">Como Usar ▶️</h2>
 
-<pre><p  align="center">Você pode usar esta ferramenta clicando aqui [Ainda não disponível].</p></pre>
+<pre><p  align="center">pip install -r requirements.txt</p></pre>
 
 <p align="center">Será retornado um dicionário com os preços do <em>Ponto de Pivot</em> e quatro níveis de <em>suporte</em> e <em>Resistência</em>.</p>
