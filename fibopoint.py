@@ -5,7 +5,7 @@ import streamlit as st
 from time import sleep
 from src.database.db import Database
 from src.config.page_config import set_page_config
-from src.indicador.pivot_point import PivotPoint
+from src.indicator.pivot_point import PivotPoint
 
 
 def run() -> None:
@@ -44,38 +44,38 @@ def run() -> None:
                 col1, col2, col3, col4 = st.columns(4)
 
                 with col1:
-                    st.metric(label=f'Resistência 1',
-                              value=result[f"resistencia_1"])
+                    st.metric(label='Resistência 1',
+                              value=result["resistencia_1"])
 
                 with col2:
-                    st.metric(label=f'Resistência 2',
-                              value=result[f"resistencia_2"])
+                    st.metric(label='Resistência 2',
+                              value=result["resistencia_2"])
 
                 with col3:
-                    st.metric(label=f'Resistência 3',
-                              value=result[f"resistencia_3"])
+                    st.metric(label='Resistência 3',
+                              value=result["resistencia_3"])
 
                 with col4:
-                    st.metric(label=f'Resistência 4',
-                              value=result[f"resistencia_4"])
+                    st.metric(label='Resistência 4',
+                              value=result["resistencia_4"])
 
                 col5, col6, col7, col8 = st.columns(4)
 
                 with col5:
-                    st.metric(label=f'Suporte 1',
-                              value=result[f"suporte_1"])
+                    st.metric(label='Suporte 1',
+                              value=result["suporte_1"])
 
                 with col6:
-                    st.metric(label=f'Suporte 2',
-                              value=result[f"suporte_2"])
+                    st.metric(label='Suporte 2',
+                              value=result["suporte_2"])
 
                 with col7:
-                    st.metric(label=f'Suporte 3',
-                              value=result[f"suporte_2"])
+                    st.metric(label='Suporte 3',
+                              value=result["suporte_3"])
 
                 with col8:
-                    st.metric(label=f'Suporte 4',
-                              value=result[f"suporte_4"])
+                    st.metric(label='Suporte 4',
+                              value=result["suporte_4"])
 
     elif menu == 'English':
         st.title('Coming Soon')

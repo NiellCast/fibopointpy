@@ -16,7 +16,7 @@ class MarketData:
         stock_data = get_stock_historical_data(
             stock=self.__stock,
             country='brazil',
-            from_date=self.__time.get_start_date(3),
+            from_date=self.__time.get_start_date(4),
             to_date=self.__time.get_current_date(),
             interval='Daily'
         )
@@ -26,7 +26,7 @@ class MarketData:
 
         return {
             'high': stock_data['High'][-2],
-            'low': stock_data['High'][-2],
+            'low': stock_data['Low'][-2],
             'close': stock_data['Close'][-2],
             'open': stock_data['Open'][-1]
         }

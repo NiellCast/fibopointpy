@@ -7,7 +7,7 @@ class Date:
 		
 	def get_start_date(self, days: int) -> str:
 		"""
-		:param days: Get the number of days to subtract and calculate date - days.
+		param days: Get the number of days to subtract and calculate date - days.
 		:return: Returns the previous day's date in string format (day/month/year).
 		"""
 

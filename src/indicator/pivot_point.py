@@ -39,3 +39,4 @@ class PivotPoint:
             'suporte_3': s3,
             'suporte_4': s4
         }
+
