@@ -12,7 +12,7 @@
   <h2 align="center">Como Usar ▶️</h2>
 
 <pre><p  align="center">pip install -r requirements.txt</p>
-<p>streamlit run fibopoint.py
+<p  align="center">streamlit run fibopoint.py</p>
 </pre>
 
 <p align="center">Será retornado um dicionário com os preços do <em>Ponto de Pivot</em> e quatro níveis de <em>suporte</em> e <em>Resistência</em>.</p>
